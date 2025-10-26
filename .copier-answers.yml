@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2024.04.23
+_src_path: gh:scientific-python/cookie
+backend: hatch
+email: nstarman@users.noreply.github.com
+full_name: Nathaniel Starkman
+license: MIT
+org: GalacticDynamics
+project_name: oncequinox
+project_short_description: A module for creating singleton Equinox modules.
+url: https://github.com/GalacticDynamics/oncequinox
+vcs: true
