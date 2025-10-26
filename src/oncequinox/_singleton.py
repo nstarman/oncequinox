@@ -63,19 +63,19 @@ class SingletonModuleMeta(ModuleMeta):  # type: ignore[misc]
         >>> derived.value
         2
 
-        Arguments to __init__ are only used for the first instantiation:
+        Arguments to ``__init__`` are only used for the first instantiation:
 
-        >>> class Counter(eqx.Module, metaclass=oqx.SingletonModuleMeta):
-        ...     count: int
-        ...     def __init__(self, count: int):
-        ...         self.count = count
-        >>> counter1 = Counter(10)
-        >>> counter1.count
+        >>> class HasValue(eqx.Module, metaclass=oqx.SingletonModuleMeta):
+        ...     value: int
+        ...     def __init__(self, value: int):
+        ...         self.value = value
+        >>> v1 = HasValue(10)
+        >>> v1.value
         10
-        >>> counter2 = Counter(20)  # Args ignored, returns existing instance
-        >>> counter2.count
+        >>> v2 = HasValue(20)  # Args ignored, returns existing instance
+        >>> v2.value
         10
-        >>> counter1 is counter2
+        >>> v1 is v2
         True
 
     """

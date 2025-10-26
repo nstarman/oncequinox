@@ -70,19 +70,19 @@ Arguments are only used for the first instantiation:
 import equinox as eqx
 from oncequinox import SingletonModuleMeta
 
-class Counter(eqx.Module, metaclass=SingletonModuleMeta):
-    count: int
+class HasValue(eqx.Module, metaclass=SingletonModuleMeta):
+    value: int
 
-    def __init__(self, count: int):
-        self.count = count
+    def __init__(self, value: int):
+        self.value = value
 
-counter1 = Counter(10)
-print(counter1.count)  # 10
+v1 = HasValue(10)
+print(v1.value)  # 10
 
 # Subsequent calls ignore arguments and return existing instance
-counter2 = Counter(20)
-print(counter2.count)  # 10
-print(counter1 is counter2)  # True
+v2 = HasValue(20)
+print(v2.value)  # 10
+print(v1 is v2)  # True
 
 ```
 
